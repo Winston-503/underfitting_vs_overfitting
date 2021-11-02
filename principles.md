@@ -1,5 +1,5 @@
 # Overfitting and Underfitting principles
-## Understand what it is and why you should use particular techniques to prevent this
+## Understand basic principles of underfitting and overfitting and why you should use particular techniques to deal with them
 
 A lot of articles have been written about overfitting, but almost all of them *are simply a list of tools*. "Top 10 tools to fight overfitting you should know" or "Best techniques to combat overfitting". *It's like being shown nails without explaining how to hammer them*. It can be very confusing for people who are trying to figure out how overfitting works. Also, these articles often do not consider underfitting, as if it does not exist at all.
 
@@ -9,7 +9,7 @@ In this article, I would like to list the **basic principles** (exactly *princip
 
 Although I'm not describing all the concepts you need to know here (for example, *quality metrics* or *cross-validation*), I think it's important to explain to you (or just remind you) what underfitting/overfitting is.
 
-To figure this out, let's create some dataset, split it into train and test (I will not use a validation set in this example to simplify it, but I will tell about it later), and then train three models on it - simple, good and complex. All code is available in this [GitLab repo](https://gitlab.com/Winston-90/underfitting_vs_overfitting).
+To figure this out, let's create some dataset, split it into train and test sets, and then train three models on it - simple, good and complex (I will not use a validation set in this example to simplify it, but I will tell about it later). All code is available in this [GitLab repo](https://gitlab.com/Winston-90/underfitting_vs_overfitting).
 
 | ![dataset.jpg](./img/dataset.jpg) |
 |:--:|
@@ -61,7 +61,7 @@ Before we move on to the tools, let's understand how to "diagnose" underfitting 
 
 **Underfitting** means that your model makes accurate, but initially incorrect predictions. In this case, **train error is large** and **val/test error is large** too.
 
-**Overfitting** means that your model makes correct, but not accurate predictions. In this case, **train error is very small** and **val/test error is large**.
+**Overfitting** means that your model makes not accurate predictions. In this case, **train error is very small** and **val/test error is large**.
 
 When you find a **good model**, **train error is small** (but larger than in the case of overfitting) and **val/test error is small** too.
 
@@ -91,7 +91,7 @@ In fact, everything that will be listed below is only the consequence of this si
 
 The easiest way that comes to mind based on the intuition above is to try a more simple or more complex algorithm (model).
 
-To complicate the model, you need to add more parameters (*degrees of freedom*). Sometimes this means to directly try a more powerful model - one that is a priori capable of restoring more complex dependencies (*SVM with different kernels instead of logistic regression*). **If the algorithm is already quite complex** (neural network or some ensemble model), **you need to add more parameters** to it, for example, increase the number of models in boosting. In the context of neural networks, this means adding more layers / more neurons in each layer / more connections between layers / more filters for CNN, and so on.
+To complicate the model, you need to add more parameters (*degrees of freedom*). Sometimes this means to directly try a more powerful model - one that is a priori capable to restore more complex dependencies (*SVM with different kernels instead of logistic regression*). **If the algorithm is already quite complex** (neural network or some ensemble model), **you need to add more parameters** to it, for example, increase the number of models in boosting. In the context of neural networks, this means adding more layers / more neurons in each layer / more connections between layers / more filters for CNN, and so on.
 
 To simplify the model, you need contrariwise to reduce the number of parameters. Either completely change the algorithm (*try random forest instead of deep neural network*), or reduce the number of degrees of freedom. Fewer layers, fewer neurons, and so on.
 
@@ -127,7 +127,7 @@ But artificial obtaining of additional features from existing ones (the so-calle
 
 If you need to simplify the model, then you should use a smaller quantity of features. First of all, remove all the additional features that you added earlier if you did so. But it may turn out that in the original dataset there are features that do not carry useful information, and sometimes cause problems. Linear models often work worse if some features are dependent - *highly correlated*. In this case, you need to use *feature selection* approaches to select only those features that carry the maximum amount of useful information.
 
-It is worthwhile to say that in the context of neural networks, *feature engineering* and *feature selection* make almost no sense because the network finds dependencies in the data itself. This is actually why deep neural networks can restore such complex dependencies.
+It is worthwhile to say that in the context of neural networks, *feature engineering* and *feature selection* make almost no sense because **the network finds dependencies in the data itself**. This is actually why deep neural networks can restore such complex dependencies.
 
 ### Why Getting More Data Sometimes Can't Help
 

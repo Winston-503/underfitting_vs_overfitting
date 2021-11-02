@@ -1,12 +1,12 @@
 # Overfitting and Underfitting principles
 
-Understand what Overfitting and Underfitting is and why you should use particular techniques to prevent them.
+Understand basic principles of underfitting and overfitting and why you should use particular techniques to deal with them.
 
 ![preview.jpg](./img/preview.jpg)
 
 ## Article
 
-You can read detailed article on [Towards Data Science]() or directly on [GitLab](https://gitlab.com/Winston-90/underfitting_vs_overfitting/-/blob/main/principles.md).
+You can read detailed article on [Medium](https://medium.com/@andimid/overfitting-and-underfitting-principles-ea8964d9c45c) or directly on [GitLab](https://gitlab.com/Winston-90/underfitting_vs_overfitting/-/blob/main/principles.md).
 
 ## Jupyter Notebooks
 
