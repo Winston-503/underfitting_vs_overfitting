@@ -15,3 +15,16 @@ See Jupiter notebooks, that contain all examples from article:
 - [underfitting_vs_overfitting.ipynb](https://gitlab.com/Winston-90/underfitting_vs_overfitting/-/blob/main/underfitting_vs_overfitting.ipynb), which contains all other materials
 
 Open them with [Jupyter](https://jupyter.org/) or see directly in a browser.
+
+## Setup
+
+To run this code, you must have *numpy*, *sklearn*, *matplotlib* and *seaborn* libraries installed.
+
+You should create virtual environment, activate it and run `pip install -r requirements.txt` or run following commands:
+
+```
+pip install numpy
+pip install scikit-learn
+pip install matplotlib
+pip install seaborn
+```
