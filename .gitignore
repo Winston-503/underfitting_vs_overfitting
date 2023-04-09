@@ -1,1 +1,6 @@
+.idea
 .ipynb_checkpoints
+
+img/*
+!img/preview.jpg
+principles.md
