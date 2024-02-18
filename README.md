@@ -20,11 +20,8 @@ Open them with [Jupyter](https://jupyter.org/) or see directly in a browser.
 
 To run this code, you must have *numpy*, *sklearn*, *matplotlib* and *seaborn* libraries installed.
 
-You should create virtual environment, activate it and run `pip install -r requirements.txt` or run following commands:
+You should create virtual environment, activate it and run `pip install -r requirements.txt` or run following command:
 
 ```
-pip install numpy
-pip install scikit-learn
-pip install matplotlib
-pip install seaborn
+pip install numpy scikit-learn matplotlib seaborn
 ```
